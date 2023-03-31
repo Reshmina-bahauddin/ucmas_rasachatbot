@@ -1,0 +1,10 @@
+[
+  {
+    "name": "CARDINAL",
+    "pattern": "\\d{10,12}"
+  },
+  {
+    "name": "DATE",
+    "pattern": "\\d{1,2}"
+  }
+]

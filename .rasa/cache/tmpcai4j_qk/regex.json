@@ -1,0 +1,10 @@
+[
+  {
+    "name": "age",
+    "pattern": "\\d{10,12}"
+  },
+  {
+    "name": "contact_no",
+    "pattern": "\\d{10,12}"
+  }
+]

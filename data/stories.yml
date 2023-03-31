@@ -1,0 +1,450 @@
+version: "3.1"
+
+stories:
+
+- story : greet + interested + address + branch_dhamankar + meeting
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: interested
+    - action: contact_form
+    - active_loop: contact_form
+    - active_loop: null
+    - action: action_form_submit
+   
+    - intent: address
+    - action: utter_address
+    - intent: dhamanakar_naka
+    - action: utter_dhamanakar_naka 
+    - intent : meeting
+    - action : utter_meeting
+    - intent: goodbye
+    - action: utter_goodbye
+
+- story : greet + interested + address+ branch_vanjarpati + meeting
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: interested
+    - action: contact_form
+    - active_loop: contact_form
+    - active_loop: null
+    - action: action_form_submit
+    
+    - intent: address
+    - action: utter_address
+    - intent: vanjarpati_naka
+    - action: utter_vanjarpati_naka 
+    - intent : meeting
+    - action : utter_meeting 
+    - intent: goodbye
+    - action: utter_goodbye
+
+- story : greet +interested + address + branch_both + meeting
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: interested
+    - action: contact_form
+    - active_loop: contact_form
+    - active_loop: null
+    - action: action_form_submit
+   
+    - intent: address
+    - action: utter_address
+    - intent : both_address
+    - action:  utter_both_address
+    - intent : meeting
+    - action : utter_meeting
+    - intent: goodbye
+    - action: utter_goodbye
+
+
+
+
+- story : greet + ucmas + fees +interested+meeting +address_dhamankar
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: ucmas
+    - action: utter_ucmas
+    - intent: fees
+    - action: utter_fees
+    - intent: interested
+    - action: contact_form
+    - active_loop: contact_form
+    - active_loop: null
+    - action: action_form_submit
+  
+    - intent : meeting
+    - action : utter_meeting
+    - intent: address
+    - action: utter_address
+    - intent: dhamanakar_naka
+    - action: utter_dhamanakar_naka 
+    - intent: goodbye
+    - action: utter_goodbye
+
+
+- story : greet + ucmas + fees + interested + meeting+ address_vanjarpati 
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: ucmas
+    - action: utter_ucmas
+    - intent: fees
+    - action: utter_fees
+    - intent: interested
+    - action: contact_form
+    - active_loop: contact_form
+    - active_loop: null
+    - action: action_form_submit
+    - intent : meeting
+    - action : utter_meeting
+    - intent: address
+    - action: utter_address
+    - intent: vanjarpati_naka
+    - action: utter_vanjarpati_naka
+    - intent: goodbye
+    - action: utter_goodbye
+
+- story : greet + ucmas + fees + interested +meeting + address_both 
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: ucmas
+    - action: utter_ucmas
+    - intent: fees
+    - action: utter_fees
+    - intent: interested
+    - action: contact_form
+    - active_loop: contact_form
+    - active_loop: null
+    - action: action_form_submit
+   
+    - intent : meeting
+    - action : utter_meeting
+    - intent: address
+    - action: utter_address
+    - intent : both_address
+    - action:  utter_both_address
+    - intent: goodbye
+    - action: utter_goodbye
+
+
+- story: greet + other_courses + address_dham
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: other_courses 
+    - action: utter_courses
+    - intent: fees
+    - action: utter_fees
+    - intent: address
+    - action: utter_address
+    - intent: dhamanakar_naka
+    - action: utter_dhamanakar_naka 
+    - intent: meeting
+    - action: utter_meeting
+    - intent: goodbye
+    - action: utter_goodbye
+
+
+- story: greet + other_courses + address_vanjar
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: other_courses 
+    - action: utter_courses
+    - intent: fees
+    - action: utter_fees
+    - intent: address
+    - action: utter_address
+    - intent: vanjarpati_naka
+    - action: utter_vanjarpati_naka
+    - intent: meeting
+    - action: utter_meeting
+    - intent: goodbye
+    - action: utter_goodbye
+
+
+- story: greet + other_courses + address_both
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: other_courses 
+    - action: utter_courses
+    - intent: fees
+    - action: utter_fees
+    - intent: address
+    - action: utter_address
+    - intent: both_address
+    - action:  utter_both_address
+    - intent: meeting
+    - action: utter_meeting
+    - intent: goodbye
+    - action: utter_goodbye
+
+- story: greet+ ucmas + child_name + child_age +  interested +meeting + address_dhamankar
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: ucmas
+    - action: utter_ucmas
+    - intent: child_age
+    - action: action_age_checking
+    - intent: interested
+    - action: contact_form
+    - active_loop: contact_form
+    - active_loop: null
+    - action: action_form_submit   
+    - intent : meeting
+    - action : utter_meeting
+    - intent: address
+    - action: utter_address
+    - intent: dhamanakar_naka
+    - action: utter_dhamanakar_naka 
+    - intent: goodbye
+    - action: utter_goodbye
+
+- story: greet+ ucmas + child_name + child_age +  interested +meeting + address_vanjarpati
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: ucmas
+    - action: utter_ucmas
+    - intent: child_age
+    - action: action_age_checking
+    - intent: interested
+    - action: contact_form
+    - active_loop: contact_form
+    - active_loop: null
+    - action: action_form_submit   
+    - intent : meeting
+    - action : utter_meeting
+    - intent: address
+    - action: utter_address
+    - intent: vanjarpati_naka
+    - action: utter_vanjarpati_naka
+    - intent: goodbye
+    - action: utter_goodbye
+
+- story: greet+ ucmas + child_name + child_age +  interested +meeting + address_both
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: ucmas
+    - action: utter_ucmas
+    - intent: child_age
+    - action: action_age_checking
+    - intent: interested
+    - action: contact_form
+    - active_loop: contact_form
+    - active_loop: null
+    - action: action_form_submit    
+    - intent : meeting
+    - action : utter_meeting
+    - intent: address
+    - action: utter_address
+    - intent : both_address
+    - action:  utter_both_address
+    - intent: goodbye
+    - action: utter_goodbye
+    
+- story: greet + address + address_vanjar + admission + contact_form
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: address
+    - action: utter_address
+    - intent: vanjarpati_naka
+    - action: utter_vanjarpati_naka
+    - intent: admission
+    - action: contact_form
+    - active_loop: contact_form
+    - active_loop: null
+    - action: action_form_submit
+    - intent: goodbye
+    - action: utter_goodbye
+
+
+- story: greet + address + address_dhamankar + admission + contact_form
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: address
+    - action: utter_address
+    - intent: dhamanakar_naka
+    - action: utter_dhamanakar_naka 
+    - intent: admission
+    - action: contact_form
+    - active_loop: contact_form
+    - active_loop: null
+    - action: action_form_submit    
+    - intent: goodbye
+    - action: utter_goodbye
+
+- story: greet + address + address_dhamankar + admission + contact_form
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: address
+    - action: utter_address
+    - intent : both_address
+    - action:  utter_both_address
+    - intent: admission
+    - action: contact_form
+    - active_loop: contact_form
+    - active_loop: null
+    - action: action_form_submit  
+    - intent: goodbye
+    - action: utter_goodbye
+
+# - story: fees + admission or interested + address (vanjar) + meeting 
+#   steps:
+#     - intent: fees
+#     - action: utter_fees
+#     - or:
+#       - intent: admission
+#       - intent: interested
+#     - action: contact_form
+#     - active_loop: contact_form
+#     - active_loop: null
+#     - action: action_form_submit
+#     - action: utter_address
+#     - intent: vanjarpati_naka
+#     - action: utter_vanjarpati_naka
+#     - intent : meeting
+#     - action : utter_meeting
+
+
+# - story: fees + admission or interested + address (dhamankar) + meeting 
+#   steps:
+#     - intent: fees
+#     - action: utter_fees
+#     - or:
+#       - intent: admission
+#       - intent: interested
+#     - action: contact_form
+#     - active_loop: contact_form
+#     - active_loop: null
+#     - action: action_form_submit
+  
+#     - action: utter_address
+#     - intent: Dhamanakar_naka
+#     - action: utter_Dhamanakar_naka
+#     - intent : meeting
+#     - action : utter_meeting
+
+
+# - story: fees + admission or interested + address (both) + meeting 
+#   steps:
+#     - intent: fees
+#     - action: utter_fees
+#     - or:
+#       - intent: admission
+#       - intent: interested
+#     - action: contact_form
+#     - active_loop: contact_form
+#     - active_loop: null
+#     - action: action_form_submit
+  
+#     - action: utter_address
+#     - intent: both_address
+#     - action: utter_both_address
+#     - intent : meeting
+#     - action : utter_meeting
+
+# - story: address(vajarpati) + admission or interested + meeting
+#   steps:
+#     - intent: address    
+#     - action: utter_address
+#     - intent: vanjarpati_naka
+#     - action: utter_vanjarpati_naka
+#     - or:
+#       - intent: admission
+#       - intent: interested
+#     - action: contact_form
+#     - active_loop: contact_form
+#     - active_loop: null
+#     - action: action_form_submit
+   
+#     - intent : meeting
+#     - action : utter_meeting
+
+# - story: address(dhamankar) + admission or interested + meeting
+#   steps:
+#     - intent: address    
+#     - action: utter_address
+#     - intent: Dhamanakar_naka
+#     - action: utter_Dhamanakar_naka
+#     - or:
+#       - intent: admission
+#       - intent: interested
+#     - action: contact_form
+#     - active_loop: contact_form
+#     - active_loop: null
+#     - action: action_form_submit
+   
+#     - intent : meeting
+#     - action : utter_meeting
+
+# - story: address(both) + admission or interested + meeting
+#   steps:
+#     - intent: address    
+#     - action: utter_address
+#     - intent: both_address
+#     - action: utter_both_address
+#     - or:
+#       - intent: admission
+#       - intent: interested
+#     - action: contact_form
+#     - active_loop: contact_form
+#     - active_loop: null
+#     - action: action_form_submit
+   
+#     - intent : meeting
+#     - action : utter_meeting
+
+
+
+
+# - story : greet + branch_address_dham + course_duration +meeting
+#   steps:
+#     - intent: greet
+#     - action: utter_greet
+#     - intent: interested
+#     - action: utter_interested
+#     - intent: address
+#     - action: utter_address
+#     - intent: Dhamanakar_naka
+#     - action: utter_Dhamanakar_naka 
+#     - intent: vanjarpati_naka
+#     - action: utter_vanjarpati_naka
+#     - intent : both_address
+#     - action:  utter_both_address
+#     - intent: course_duration
+#     - action: utter_course_duration
+#     - intent: meeting
+#     - action: utter_meeting
+
+# - story : greet + branch_address_vanjar + course_duration +meeting
+#   steps:
+#     - intent: greet
+#     - action: utter_greet
+#     - intent: interested
+#     - action: utter_interested
+#     - intent: address
+#     - action: utter_address
+#     - intent: Dhamanakar_naka
+#     - action: utter_Dhamanakar_naka 
+#     - intent: vanjarpati_naka
+#     - action: utter_vanjarpati_naka
+#     - intent : both_address
+#     - action:  utter_both_address
+#     - intent: course_duration
+#     - action: utter_course_duration
+#     - intent: meeting
+#     - action: utter_meeting
+
+

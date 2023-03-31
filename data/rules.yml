@@ -1,0 +1,110 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: check the age of the child
+  steps:
+  - intent: child_age
+  - action: action_age_checking
+
+- rule: Activate form on interested
+  steps:
+  - intent: interested
+  - action: contact_form
+  - active_loop: contact_form
+
+- rule: Activate form on admission
+  steps:
+  - intent: admission
+  - action: contact_form
+  - active_loop: contact_form
+
+  
+- rule: Submit form
+  condition:
+  # Condition that form is active.
+  - active_loop: contact_form
+  steps:
+  # Form is deactivated
+  - action: contact_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: PERSON
+  - slot_was_set:
+    - requested_slot: DATE
+  - slot_was_set:
+    - requested_slot: CARDINAL
+  - action: action_form_submit  
+  # The actions we want to run when the form is submitted.
+
+- rule: Fallback
+  steps:
+  - intent: out_of_scope
+  - action: utter_fallback
+  
+- rule: Fees
+  steps:
+  - intent: fees
+  - action: utter_fees
+
+- rule: ok
+  steps:
+  - intent: ok
+  - action: utter_ok
+
+
+- rule: qualification
+  steps:
+  - intent: qualification_teacher
+  - action : utter_qualification_teacher
+
+- rule: student
+  steps:
+  - intent : student
+  - action: utter_student
+
+ 
+- rule: address
+  steps:
+  - intent: address
+  - action: utter_address
+
+
+- rule: classtime
+  steps:
+  - intent: classtime
+  - action: utter_classtime
+
+- rule: contact_number
+  steps:
+  - intent: contact_number
+  - action: utter_contact_number
+
+- rule: course_duration
+  steps:
+  - intent: course_duration
+  - action: utter_course_duration
+
+- rule: ucmas
+  steps:
+  - intent: ucmas
+  - action: utter_ucmas
+
+
+
+ 
+ 
+
+  
+  
+ 

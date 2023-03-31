@@ -1,0 +1,36 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-CARDINAL",
+      "2": "I-CARDINAL",
+      "3": "L-CARDINAL",
+      "4": "U-CARDINAL",
+      "5": "B-DATE",
+      "6": "I-DATE",
+      "7": "L-DATE",
+      "8": "U-DATE",
+      "9": "B-PERSON",
+      "10": "I-PERSON",
+      "11": "L-PERSON",
+      "12": "U-PERSON",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-CARDINAL": 1,
+      "I-CARDINAL": 2,
+      "L-CARDINAL": 3,
+      "U-CARDINAL": 4,
+      "B-DATE": 5,
+      "I-DATE": 6,
+      "L-DATE": 7,
+      "U-DATE": 8,
+      "B-PERSON": 9,
+      "I-PERSON": 10,
+      "L-PERSON": 11,
+      "U-PERSON": 12,
+      "O": 0
+    },
+    "num_tags": 13
+  }
+]

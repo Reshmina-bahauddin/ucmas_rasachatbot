@@ -1,0 +1,308 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    
+
+
+- intent: address
+  examples: |
+    - What is your adddress?
+    - Where is your class?
+    - Do you have class at?
+    - address
+    - add
+    - where it is in bhiwandi?
+    - send me your address
+    - send me your location
+    - class address
+    - where can i come to meet you?
+    - where can i come to pay fees?
+    
+
+- intent: fees
+  examples: | 
+    - what is first level fees?
+    - fees structure
+    - what is the fees?
+    - fees of all level
+    - fees 
+  
+- intent: course_duration
+  examples: |
+    - How long this class goes on?
+    - how many month it will take to complete the couse
+    - how many years it take to complete course?
+    - what is the duration of the course?
+
+- intent: classtime
+  examples: |
+    - what will be the class time?
+    - what will be the duartion of class?
+
+- intent: interested
+  examples: |
+    - i want to do admission
+    - i want to enroll my child in this course
+    - i am interested in this course
+    - i want to go ahead with admission
+    - i am interested
+    - yes i am interested
+
+- intent: admission
+  examples: |
+    - i want to go ahead with admission
+    - what is the admission procedure?
+    - i want to do admission
+    - admission procedure
+
+- intent: meeting
+  examples: |
+    - when can i meet you?
+    - when will you be free?
+    - when will you be in office?
+    - i want to met you
+    - when can i come for admission?
+    - when can i fill form
+    - when can i come to meet u?
+
+- intent: ucmas
+  examples: |
+    - what is ucmas?
+    - abacus class
+    - what is brain development class?
+    - i want to know about UCMAS Class.
+    - i want to know about this course
+    - may i know about this course?
+    - what is this class about?
+    - is it math class?
+    - is it mental math class?
+    - is this abacus class?
+    - what is this program?
+  
+
+- intent: other_courses
+  examples: | 
+    - do you have other courses?
+    - do you conduct other courses?
+    - is there any other course
+
+- intent: vanjarpati_naka
+  examples: |
+    - what is your vanjarpati naka Address?
+    - send me vanjarpati naka branch detail
+    - send me location of vanjarpati naka
+    - where at vanjarpati naka
+
+
+- intent: both_address
+  examples: |
+    - send  me address of both the branch
+    - both branch address
+    - what is the address of Dhamankar naka and Vanajarpati naka
+    - will you please send address of both the branch
+    
+    
+
+- intent: dhamanakar_naka
+  examples: |
+    - what is your dhamankar naka Address?
+    - send me dhamankar naka branch detail
+    - send me location of dhamankar naka
+    - where at dhamankar naka
+
+- synonym: course
+  examples: |
+    - class
+    - classes
+
+- synonym: fees 
+  examples: |
+    - cost
+    - charge
+    - price
+
+- synonym: ucmas
+  examples: |
+    - abacus
+    - brain development
+    - mental maths
+    - maths
+   
+# - regex: name
+#   examples: |
+#     - /^[a-z ,.'-]+$/i
+    
+- intent: child_name
+  examples: |
+    - My son name is [zohair](PERSON)
+    - my daughter name is [fatima](PERSON)
+    - my child name is [abbas](PERSON)
+    - my child name is [moin](PERSON)
+
+
+
+- intent: child_age
+  examples: |
+    - my son is [10](DATE) years old
+    - my daughter is [8](DATE) years old
+    - his age is [9](DATE) years old
+    - her age is [7](DATE) years old.
+    - he is [6](DATE) years 
+    - she is [11](DATE) years 
+    - [8](DATE)
+    - [10](DATE) yrs
+    - [7](DATE) yr
+    - [18](DATE)
+    - [6](DATE)
+    - [12](DATE)
+# - regex: DATE
+#   examples: |
+#       - \d{1,2}
+
+
+
+- intent: contact_number
+  examples: |
+    - is this your contact number [9823450850](CARDINAL)
+    - your contact number 
+    - office number
+    - ucmas contact number
+    - contact number [9824240911](CARDINAL)
+    - phone number [9579188497](CARDINAL)
+    - give me your contact number
+    - send me contact number
+    - [9823450850](CARDINAL)
+    - [9284840911](CARDINAL)
+# - regex: CARDINAL
+#   examples: |
+#       - \d{10,12}
+
+- intent: student
+  examples: |
+    - How many student in one class?
+    - number of students in one class
+    - number of students in one batch
+
+- synonym: student 
+  examples: |
+    - child
+    - kids
+    - children
+
+- intent: qualification_teacher
+  examples: |
+    - what is the qualification of teacher?
+    - what is the  education qualification of teacher?
+    - who is going to teach?
+    
+     
+- intent: out_of_scope
+  examples: |
+   - blablablablalblab
+   - asdasdasdasd
+   - hahahha
+   - ..
+   - where are you 
+   - what do you
+   - ..
+   - what else can you do
+   - how are you
+   - whats the weather update
+   - im sleeping
+   - i am very tired
+   
+- intent: ok
+  examples: |
+    - ok
+    - k
+    - hmmmm
+
+

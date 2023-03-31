@@ -1,0 +1,246 @@
+version: "3.1"
+
+# Intents Declarations
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - address
+  - fees
+  - course_duration
+  - classtime
+  - interested
+  - meeting
+  - ucmas
+  - other_courses
+  - vanjarpati_naka
+  - dhamanakar_naka
+  - both_address
+  - child_name
+  - child_age
+  - contact_number
+  - admission
+  - out_of_scope
+  - student
+  - qualification_teacher
+  - ok
+#entities Declaration
+
+entities:
+  - PERSON
+  - DATE
+  - CARDINAL
+
+  #slots
+slots:
+  PERSON:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: PERSON
+
+    
+  DATE:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: DATE
+
+  CARDINAL: 
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: CARDINAL
+
+
+#form
+forms:
+  contact_form:
+    required_slots:
+      - PERSON
+      - DATE
+      - CARDINAL  
+
+
+
+responses:
+  utter_greet:
+  - text: "Hi!!!!This is UCMAS Bhiwandi. How can we help you?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Thank You.good Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_vanjarpati_naka:
+  - text:  "Abuji Arcade, 1st floor, Genesis classes, vanjarpati"
+
+  utter_dhamanakar_naka:
+  - text: "pragati classes,next to balaji mandir, padmanagar, dhamankar naka."
+
+  utter_both_address:
+  - text: "1. Abuji Arcade, 1st floor, Genesis classes, vanjarpati\n
+            2. pragati classes,next to balaji mandir, padmanagar, dhamankar naka."
+
+  utter_student:
+  - text: "15 student in one batch"
+
+  utter_qualification_teacher:
+  - text: "Our all Course Instructor are well qualified. They have completed their levels training from Head Office,mumbai"
+
+  utter_address:
+  - text: "We have two branches in bhiwandi.Which branch address you want :"
+    buttons:
+      - title: "Vanjarpati Naka"
+        payload: /vanjarpati_naka
+
+      - title : "Dhamanakar naka"
+        payload: /dhamanakar_naka
+      
+      - title : "Both"
+        payload: /both_address
+      
+  utter_ok:
+  - text: "can i help you with anything else"
+      
+
+  utter_fees:
+  - text: " Level 1: 6550/-\n
+            Level 2: 3200/-\n
+            Level 3: 3200/-\n
+            Level 4: 3200/-\n
+            Level 5: 3200/-\n
+            Level 6: 4200/-\n
+            Level 7: 4200/-\n
+            Level 8: 4200/-"
+
+  utter_course_duration:
+  - text: "Level 1: 4 month\n
+            Level 2: 3 month\n
+            Level 3: 3 month\n
+            Level 4: 3 month\n
+            Level 5: 3 month\n
+            Level 6: 4 month\n
+            Level 7: 4 month\n
+            Level 8: 4 month"
+
+  utter_classtime:
+  - text: "2 hr per week(weekend)"
+
+  utter_interested:
+  - text: "You can come to our center and complete admission process by filling the form and paying the fees"
+
+  utter_meeting:
+  - text: "you can meet me from morning 10 till evening 6 at our branch office"
+
+  utter_ucmas:
+  - text: "Its a brain development program that help children from age 5 to 13 to improve their memory. It has total 8 Levels" 
+  
+  utter_courses:
+  - text: "Till now not started with other courses"
+
+  utter_child_name:
+  - text : "Ok. I have noted it."
+
+  utter_admission:
+  - text : "we will contact you for further admission process"
+
+  utter_contact_number:
+  - text : "office number: 9284840911"
+
+  utter_ask_contact_form_PERSON: 
+  - text : "ok.Kindly give us few information about the child for our further reference  \n
+            What is the Child Name ?"
+      
+  utter_ask_contact_form_DATE:
+  - text : "Age of your Child"
+
+  utter_ask_contact_form_CARDINAL:
+  - text : "Your Contact No:"
+
+  utter_fallback:
+  - text: "Sorry!! i couldn't get you. please choose  one of the following option below"
+
+    buttons:
+      - title: "Fees"
+        payload: /fees
+
+      - title : "Admission"
+        payload: /admission
+      
+      - title : "Address"
+        payload: /address
+
+      - title: "Class Time"
+        payload: /classtime 
+
+      - title : "Contact Number"
+        payload: /contact_number
+      
+      - title : "Course Duration"
+        payload: /course_duration  
+ 
+      - title : "About UCMAS"
+        payload: /ucmas 
+
+
+actions:
+
+  - action_form_submit
+  - action_age_checking
+  - utter_greet
+  - utter_cheer_up
+  - utter_did_that_help
+  - utter_happy
+  - utter_goodbye
+  - utter_iamabot
+  - utter_vanjarpati_naka
+  - utter_dhamanakar_naka
+  - utter_both_address
+  - utter_address
+  - utter_fees
+  - utter_course_duration
+  - utter_classtime
+  - utter_interested
+  - utter_meeting
+  - utter_student
+  - utter_ucmas
+  - utter_qualification_teacher
+  - utter_courses
+  - utter_child_name
+  - utter_ask_contact_form_PERSON
+  - utter_ask_contact_form_DATE
+  - utter_ask_contact_form_CARDINAL
+  - utter_contact_number
+  - action_default_fallback
+  - utter_fallback
+  - utter_ok
+  
+  
+ 
+  
+
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
