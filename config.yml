@@ -12,16 +12,6 @@ pipeline:
 # # See https://rasa.com/docs/rasa/tuning-your-model for more information.
   
   - name: WhitespaceTokenizer
-    
-  # - name: RegexEntityExtractor
-  #   # text will be processed with case insensitive as default
-  #   case_sensitive: False
-  #   # use lookup tables to extract entities
-  #   use_lookup_tables: True
-  #   # use regexes to extract entities
-  #   use_regexes: True
-  #   # use match word boundaries for lookup table
-  #   use_word_boundaries: True
   - name: LexicalSyntacticFeaturizer
   - name: CountVectorsFeaturizer
   - name: CountVectorsFeaturizer
@@ -30,9 +20,9 @@ pipeline:
     max_ngram: 4
   - name: SpacyNLP
     model: en_core_web_lg
-  - name: SpacyTokenizer
-  - name: SpacyFeaturizer
-    pooling: mean
+  # - name: SpacyTokenizer
+  # - name: SpacyFeaturizer
+  #   pooling: mean
   - name: SpacyEntityExtractor  
     dimensions: ["PERSON", "DATE", "CARDINAL"]
   - name: DIETClassifier
@@ -47,6 +37,15 @@ pipeline:
     ambiguity_threshold: 0.1
   # - name: CRFEntityExtractor
   #   BILOU_flag: False
+  # - name: RegexEntityExtractor
+  #   # text will be processed with case insensitive as default
+  #   case_sensitive: False
+  #   # use lookup tables to extract entities
+  #   use_lookup_tables: True
+  #   # use regexes to extract entities
+  #   use_regexes: True
+  #   # use match word boundaries for lookup table
+  #   use_word_boundaries: True
   
   
 
